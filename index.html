@@ -1,15 +1,27 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NovaUI Core Gallery</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script type="module" crossorigin src="/NovaUI-Core/assets/index-d78e93ec.js"></script>
+    <meta name="theme-color" content="#f7f8fa" />
+    <meta
+      name="description"
+      content="NovaUI Core — a hands-on studio for accessible React components, interactions, and automated tests."
+    />
+    <link rel="icon" type="image/svg+xml" href="/NovaUI-Core/favicon.svg" />
+    <title>NovaUI Core · Component Studio</title>
+    <script>
+      try {
+        document.documentElement.dataset.theme =
+          localStorage.getItem("novaui-theme") === "dark" ? "dark" : "light";
+      } catch {
+        document.documentElement.dataset.theme = "light";
+      }
+    </script>
+    <script type="module" crossorigin src="/NovaUI-Core/assets/index-De_4Y9WD.js"></script>
+    <link rel="stylesheet" crossorigin href="/NovaUI-Core/assets/index-ZuY6ZeD-.css">
   </head>
-  <body class="bg-slate-50 text-slate-900">
+  <body>
     <div id="root"></div>
-    
   </body>
 </html>
