@@ -142,4 +142,12 @@ Saved profile IDs are retained under `novaui-saved` in browser local storage. Th
 
 ## Submission
 
-The local repository includes component source, corresponding tests, Jest configuration, package scripts, coverage summaries, documentation, and incremental Git commits. To submit the assignment, publish this local repository to your GitHub account and paste its public repository URL into Codemore’s submission form. No remote repository or submission was created automatically.
+The local repository includes component source, corresponding tests, Jest configuration, package scripts, coverage summaries, documentation, and incremental Git commits. To submit the assignment, publish this local repository to your GitHub account and paste its public repository URL into Codemore’s submission form. The repository is published at https://github.com/rachit1807/NovaUI-Core. The Codemore submission itself must be completed by the owner.
+
+## GitHub Pages deployment
+
+Live studio: https://rachit1807.github.io/NovaUI-Core/
+
+`npm run deploy` runs all tests, refreshes the saved coverage report, builds the application, and publishes `dist/` to the `gh-pages` branch. GitHub Pages must serve that branch from its root. Commit source changes to `main` separately.
+
+Vite uses `base: "/NovaUI-Core/"` so bundled assets resolve under the repository URL. The application entry is `src/main.jsx`, which imports the studio stylesheet. Do not replace it with an unstyled gallery entry point or publish the raw source HTML as the site.
