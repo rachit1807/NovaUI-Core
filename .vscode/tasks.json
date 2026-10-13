@@ -1,0 +1,8 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    { "label": "NovaUI: Start studio", "type": "npm", "script": "dev", "problemMatcher": [], "isBackground": true },
+    { "label": "NovaUI: Test with coverage", "type": "npm", "script": "test:report", "group": "test", "problemMatcher": [] },
+    { "label": "NovaUI: Production build", "type": "npm", "script": "build", "group": "build", "problemMatcher": [] }
+  ]
+}
