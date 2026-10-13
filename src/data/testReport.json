@@ -1,1 +1,49 @@
-{ "generatedAt": null, "suites": 0, "tests": 0, "passed": 0, "coverage": null, "files": [] }
+{
+  "generatedAt": "2026-10-13T06:33:07.032Z",
+  "suites": 6,
+  "tests": 54,
+  "passed": 54,
+  "coverage": {
+    "statements": 100,
+    "branches": 100,
+    "functions": 100,
+    "lines": 100
+  },
+  "files": [
+    {
+      "name": "src/components/Button.jsx",
+      "statements": 100,
+      "branches": 100,
+      "functions": 100,
+      "lines": 100
+    },
+    {
+      "name": "src/components/FormInput.jsx",
+      "statements": 100,
+      "branches": 100,
+      "functions": 100,
+      "lines": 100
+    },
+    {
+      "name": "src/components/LoginForm.jsx",
+      "statements": 100,
+      "branches": 100,
+      "functions": 100,
+      "lines": 100
+    },
+    {
+      "name": "src/components/UserCard.jsx",
+      "statements": 100,
+      "branches": 100,
+      "functions": 100,
+      "lines": 100
+    },
+    {
+      "name": "src/lib/validation.js",
+      "statements": 100,
+      "branches": 100,
+      "functions": 100,
+      "lines": 100
+    }
+  ]
+}

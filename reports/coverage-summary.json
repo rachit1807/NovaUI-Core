@@ -1,0 +1,45 @@
+{
+  "total": {
+    "statements": 100,
+    "branches": 100,
+    "functions": 100,
+    "lines": 100
+  },
+  "files": [
+    {
+      "name": "src/components/Button.jsx",
+      "statements": 100,
+      "branches": 100,
+      "functions": 100,
+      "lines": 100
+    },
+    {
+      "name": "src/components/FormInput.jsx",
+      "statements": 100,
+      "branches": 100,
+      "functions": 100,
+      "lines": 100
+    },
+    {
+      "name": "src/components/LoginForm.jsx",
+      "statements": 100,
+      "branches": 100,
+      "functions": 100,
+      "lines": 100
+    },
+    {
+      "name": "src/components/UserCard.jsx",
+      "statements": 100,
+      "branches": 100,
+      "functions": 100,
+      "lines": 100
+    },
+    {
+      "name": "src/lib/validation.js",
+      "statements": 100,
+      "branches": 100,
+      "functions": 100,
+      "lines": 100
+    }
+  ]
+}

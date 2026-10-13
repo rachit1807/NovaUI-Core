@@ -12,7 +12,11 @@
     "test:coverage": "jest --coverage",
     "test:report": "jest --coverage --json --outputFile=reports/test-results.json && node scripts/report.cjs"
   },
-  "dependencies": { "react": "^19.2.0", "react-dom": "^19.2.0", "lucide-react": "^0.468.0" },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "lucide-react": "^0.468.0"
+  },
   "devDependencies": {
     "vite": "^7.0.0",
     "@vitejs/plugin-react": "^5.0.0",
