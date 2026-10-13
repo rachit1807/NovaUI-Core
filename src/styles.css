@@ -2686,3 +2686,281 @@ td svg {
     animation: none !important;
   }
 }
+
+/* Theme controls stay visible in the compact mobile header. */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 10px !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 6px;
+  color: #68758f;
+  font-size: 10px;
+  white-space: nowrap;
+}
+.theme-toggle:hover {
+  background: #f0f3fc !important;
+}
+@media (max-width: 520px) {
+  .theme-toggle {
+    padding: 7px !important;
+  }
+  .theme-toggle span {
+    display: none;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  color: #e1e7f2;
+  background: #101521;
+  --blue: #93a5ff;
+  --muted: #9ba8c0;
+  --line: #2c3549;
+  --green: #85c6a7;
+}
+[data-theme="dark"]
+  :is(
+    .sidebar,
+    .topbar,
+    .stat-card,
+    .component-tile,
+    .studio-panel,
+    .properties-panel,
+    .event-panel,
+    .user-card,
+    .login-form,
+    .form-success,
+    .coverage-card,
+    .report-table-panel,
+    .test-info > div,
+    .docs-content,
+    .contact-modal,
+    .toast,
+    .search-box,
+    .art-window,
+    .floating-code,
+    .floating-check,
+    .fake-user,
+    .fake-form,
+    .skip-link
+  ) {
+  background: #191f2e !important;
+  border-color: var(--line) !important;
+}
+[data-theme="dark"] :is(h1, h2, h3) {
+  color: #e1e7f2;
+}
+[data-theme="dark"]
+  :is(
+    .workspace-icon,
+    .brand-core,
+    .quality-note,
+    .tile-preview,
+    .tile-icon,
+    .tiny-icon,
+    .property-tip,
+    .code-block,
+    .command-strip,
+    .docs-aside,
+    .contact-email,
+    .segmented,
+    .fake-button.secondary,
+    .art-input,
+    .nav-count,
+    .label-pill,
+    .section-top h2 span
+  ) {
+  background: #222b3f;
+  border-color: #35405a;
+}
+[data-theme="dark"] .component-tile:hover {
+  border-color: #6276b5 !important;
+  box-shadow: 0 8px 20px #0003;
+}
+[data-theme="dark"] .intro-banner {
+  background: #202940;
+  border-color: #303e61;
+}
+[data-theme="dark"] .playground {
+  background-color: #141c2b;
+  background-image: radial-gradient(#354159 0.6px, transparent 0.6px);
+}
+[data-theme="dark"] .art-input {
+  color: #a5b3cc;
+}
+[data-theme="dark"] .art-lines i {
+  background: #354059;
+}
+[data-theme="dark"] .art-lines i + i {
+  background: #29334a;
+}
+[data-theme="dark"]
+  :is(
+    .art-window-top,
+    .user-details,
+    .toggle-row,
+    .event-row,
+    .source-note,
+    .preview-caption,
+    .fake-form i
+  ) {
+  border-color: var(--line);
+}
+[data-theme="dark"] .art-grid {
+  opacity: 0.35;
+}
+[data-theme="dark"] .overview-footer {
+  background: #192237;
+  border-color: #34415e;
+}
+[data-theme="dark"] :is(.nav-item:hover, .nav-item.active, .sub-active) {
+  background: #263252 !important;
+  color: #a2b3ff;
+}
+[data-theme="dark"] .nav-item {
+  color: #b0bdd4;
+}
+[data-theme="dark"]
+  :is(
+    .theme-toggle,
+    .button--secondary,
+    .button--ghost,
+    .breadcrumb span,
+    .form-field label,
+    .control-label,
+    .property-field legend,
+    .toggle-row,
+    .variant-options button,
+    .segmented button,
+    .source-title,
+    .event-panel h2,
+    .docs-content h3,
+    .docs-aside h3,
+    .fake-button.secondary,
+    .code-block
+  ) {
+  color: #b8c6e0;
+}
+[data-theme="dark"] .theme-toggle:hover {
+  background: #26314a !important;
+}
+[data-theme="dark"] .button--primary {
+  background: #536ae0;
+  border-color: #536ae0;
+  color: #fff;
+}
+[data-theme="dark"] .button--primary:hover:not(:disabled) {
+  background: #657cec;
+}
+[data-theme="dark"] .button--secondary {
+  background: #20283a;
+  border-color: #3a4660;
+}
+[data-theme="dark"]
+  :is(.button--secondary, .button--ghost):hover:not(:disabled) {
+  background: #2a3650;
+}
+[data-theme="dark"]
+  :is(
+    .form-field input,
+    .control-label input,
+    .fake-field > div,
+    .fake-form i
+  ) {
+  background: #121a2a;
+  color: #d4ddf0;
+  border-color: #3a4763;
+}
+[data-theme="dark"] .form-field input:focus {
+  border-color: #91a4ff;
+  box-shadow: 0 0 0 3px #293457;
+}
+[data-theme="dark"] .form-field input[aria-invalid="true"] {
+  border-color: #de8c9a;
+}
+[data-theme="dark"] .form-field input:disabled {
+  background: #232b3b;
+  color: #8390a9;
+}
+[data-theme="dark"] .search-box input {
+  color: #d4ddf0;
+}
+[data-theme="dark"] .fake-field > div {
+  box-shadow: 0 0 0 2px #29334c;
+}
+[data-theme="dark"] .variant-options button {
+  border-color: #3a4763 !important;
+}
+[data-theme="dark"] .variant-options .selected {
+  background: #2a3656 !important;
+  border-color: #8b9bea !important;
+  color: #b3bfff;
+}
+[data-theme="dark"] .segmented .selected {
+  background: #34415d !important;
+  color: #d4ddf0;
+}
+[data-theme="dark"] .toggle-row input {
+  background: #3c4860;
+}
+[data-theme="dark"] .toggle-row input:checked {
+  background: #657aeb;
+}
+[data-theme="dark"]
+  :is(.stat-success, .user-status, .success-mark, .report-banner) {
+  background: #1d352e;
+  color: #9bd0b6;
+  border-color: #315147;
+}
+[data-theme="dark"] :is(.report-check, .passed-badge) {
+  background: #234036;
+  color: #a0d9bb;
+  border-color: #3d6153;
+}
+[data-theme="dark"] .user-status.is-away {
+  background: #3e3523;
+  color: #e0c78d;
+}
+[data-theme="dark"] .avatar--blue {
+  background: #2b3c61;
+  color: #bed0ff;
+}
+[data-theme="dark"] .avatar--rose {
+  background: #472d40;
+  color: #edb5cd;
+}
+[data-theme="dark"] .avatar--amber {
+  background: #453b28;
+  color: #ead2a3;
+}
+[data-theme="dark"] :is(.art-avatar, .profile-avatar, .fake-user > span) {
+  background: #313955;
+  color: #c0ccf5;
+}
+[data-theme="dark"]
+  :is(th, .progress-track, .docs-stack span, .source-title small) {
+  background: #232d42;
+  color: #a8b8d7;
+}
+[data-theme="dark"] td {
+  border-color: var(--line);
+  color: #b0bfd9;
+}
+[data-theme="dark"] .coverage-card strong {
+  color: #d9e2f6;
+}
+[data-theme="dark"] .coverage-number {
+  color: #9bd0b6;
+}
+[data-theme="dark"] .field-error {
+  color: #eea5b2;
+}
+[data-theme="dark"] .modal-backdrop {
+  background: #050914aa;
+}
+[data-theme="dark"] .docs-content code:not(.code-block code) {
+  background: #26344f;
+  color: #bacaf0;
+}

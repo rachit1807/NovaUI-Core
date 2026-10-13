@@ -17,6 +17,7 @@ import {
   LayoutGrid,
   Mail,
   MousePointer2,
+  Moon,
   PanelTop,
   Play,
   RotateCcw,
@@ -25,6 +26,7 @@ import {
   SlidersHorizontal,
   Sparkles,
   Star,
+  Sun,
   Terminal,
   TextCursorInput,
   Users,
@@ -69,7 +71,15 @@ function CodeBlock({ children }) {
     </pre>
   );
 }
+function readTheme() {
+  try {
+    return localStorage.getItem("novaui-theme") === "dark" ? "dark" : "light";
+  } catch {
+    return "light";
+  }
+}
 export default function App() {
+  const [theme, setTheme] = useState(readTheme);
   const [page, setPage] = useState("overview");
   const [selected, setSelected] = useState("buttons");
   const [tab, setTab] = useState("preview");
@@ -88,6 +98,17 @@ export default function App() {
   const component = catalog.find((item) => item.id === selected);
   const Icon = icons[selected];
   const coverage = report.coverage?.lines ?? 0;
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    document
+      .querySelector('meta[name="theme-color"]')
+      ?.setAttribute("content", theme === "dark" ? "#101521" : "#f7f8fa");
+    try {
+      localStorage.setItem("novaui-theme", theme);
+    } catch {
+      /* The toggle remains available when browser storage is disabled. */
+    }
+  }, [theme]);
   useEffect(() => {
     if (!toast) return;
     const timer = setTimeout(() => setToast(""), 3500);
@@ -304,10 +325,18 @@ export default function App() {
             </span>
           </div>
           <div className="topbar-actions">
-            <span className="light-label">
-              <span />
-              Light theme
-            </span>
+            <button
+              className="theme-toggle"
+              aria-label={`Switch to ${theme === "light" ? "dark" : "light"} theme`}
+              aria-pressed={theme === "dark"}
+              title={`Switch to ${theme === "light" ? "dark" : "light"} theme`}
+              onClick={() =>
+                setTheme((current) => (current === "light" ? "dark" : "light"))
+              }
+            >
+              {theme === "light" ? <Moon size={15} /> : <Sun size={15} />}
+              <span>{theme === "light" ? "Light" : "Dark"} theme</span>
+            </button>
             <span className="header-divider" />
             <span className="top-version">v1.0.0</span>
             <span className="profile-avatar small">RT</span>
@@ -754,7 +783,10 @@ export default function App() {
                             <Icon size={14} />
                             {component.name} / live preview
                           </span>
-                          <span>React · Accessible · Light theme</span>
+                          <span>
+                            React · Accessible ·{" "}
+                            {theme === "light" ? "Light" : "Dark"} theme
+                          </span>
                         </div>
                       </>
                     )}

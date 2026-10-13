@@ -3,6 +3,36 @@ import userEvent from "@testing-library/user-event";
 import App from "../App";
 beforeEach(() => localStorage.clear());
 describe("Component studio integration", () => {
+  test("switches between light and dark themes and stores the preference", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    expect(document.documentElement).toHaveAttribute("data-theme", "light");
+    await user.click(
+      screen.getByRole("button", { name: "Switch to dark theme" }),
+    );
+    expect(document.documentElement).toHaveAttribute("data-theme", "dark");
+    expect(localStorage.getItem("novaui-theme")).toBe("dark");
+    expect(
+      screen.getByRole("button", { name: "Switch to light theme" }),
+    ).toHaveAttribute("aria-pressed", "true");
+    await user.click(
+      screen.getByRole("button", { name: "Switch to light theme" }),
+    );
+    expect(document.documentElement).toHaveAttribute("data-theme", "light");
+  });
+  test("restores the saved theme on remount", () => {
+    localStorage.setItem("novaui-theme", "dark");
+    render(<App />);
+    expect(document.documentElement).toHaveAttribute("data-theme", "dark");
+    expect(
+      screen.getByRole("button", { name: "Switch to light theme" }),
+    ).toBeInTheDocument();
+  });
+  test("falls back to light when the stored theme is invalid", () => {
+    localStorage.setItem("novaui-theme", "invalid");
+    render(<App />);
+    expect(document.documentElement).toHaveAttribute("data-theme", "light");
+  });
   test.each(["invalid JSON", "{}"])(
     "recovers from malformed saved-profile data: %s",
     (stored) => {
